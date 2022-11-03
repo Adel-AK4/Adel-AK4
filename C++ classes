@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+template<typename T>
+void swapIt(T &lhs, T &rhs)
+{
+	T temp = lhs;
+	lhs = rhs;
+	rhs = temp;
+}
+template<typename T>
+class Array {
+public:
+	Array(const int size);
+	~Array();
+private:
+	T* m_values;
+	const int m_size;
+};
+int main()
+{
+	int b; int  *a = &b;
+	*a = 10;
+	cout << a <<" "<<*a<<"  "<<b<< endl;
+
+	int b; int& a = b; a = 10;
+	cout << a << endl;
+
+	Array<int>a(10);
+
+	int i = 3, j = 7;
+	swapIt(i, j);
+	cout << i << "\t" << j << endl;;
+	return 0;
